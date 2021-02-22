@@ -1,3 +1,14 @@
+<!--
+[x] index
+[x] assemblyconverter
+[x] toolkit
+[x] about
+[] contact
+[] contrib
+[] errors
+[] demo?
+-->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -50,102 +61,102 @@
 		</nav>
 
 		<!-- Overlay effect when opening sidebar on small screens -->
-	<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+		<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-	<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
-	<div class="w3-main" style="margin-left:250px">
+		<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+		<div class="w3-main" style="margin-left:250px">
 
-		<div class="w3-row w3-padding-64">
-		    <div class="w3-twothird w3-container">
-		    	<h1 class="w3-text-teal">Introduction</h1>
-		    	<a class="github-button" href="https://github.com/kcelebi" aria-label="Follow @kcelebi on GitHub" data-size='large'>Follow @kcelebi</a>
-				<a class="github-button" href="https://github.com/kcelebi/riscv-assembler" data-icon="octicon-star" aria-label="Star kcelebi/riscv-assembler on GitHub" data-size='large'>Star</a>
-		    	<a id='install'></a>
-		    	<a class="github-button" href="https://github.com/kcelebi/riscv-assembler/subscription" data-icon="octicon-eye" data-size="large" aria-label="Watch kcelebi/riscv-assembler on GitHub">Watch</a>
-		      
+			<div class="w3-row w3-padding-64">
+			    <div class="w3-twothird w3-container">
+			    	<h1 class="w3-text-teal">Introduction</h1>
+			    	<a class="github-button" href="https://github.com/kcelebi" aria-label="Follow @kcelebi on GitHub" data-size='large'>Follow @kcelebi</a>
+					<a class="github-button" href="https://github.com/kcelebi/riscv-assembler" data-icon="octicon-star" aria-label="Star kcelebi/riscv-assembler on GitHub" data-size='large'>Star</a>
+			    	<a id='install'></a>
+			    	<a class="github-button" href="https://github.com/kcelebi/riscv-assembler/subscription" data-icon="octicon-eye" data-size="large" aria-label="Watch kcelebi/riscv-assembler on GitHub">Watch</a>
+			      
 
-		      <p>This package contains tools and functions that can convert <b>RISC-V Assembly code to machine code</b>. The whole process is implemented using Python purely for understandability and simplicity, less so for efficiency in computation. These tools can be used to convert given lines of code or whole files to machine code. For conversion, output file types are binary, text files, and printing to console. The supported instruction types are R, I, S, SB, U, and UJ. Almost all standard instructions are supported, most pseudo instructions are also supported (see helper functions about adding pseudo/missing instructions).</p>
+			      <p>This package contains tools and functions that can convert <b>RISC-V Assembly code to machine code</b>. The whole process is implemented using Python purely for understandability and simplicity, less so for efficiency in computation. These tools can be used to convert given lines of code or whole files to machine code. For conversion, output file types are binary, text files, and printing to console. The supported instruction types are R, I, S, SB, U, and UJ. Almost all standard instructions are supported, most pseudo instructions are also supported (see helper functions about adding pseudo/missing instructions).</p>
 
-		      <p>Feel free to <a href = "https://github.com/kcelebi/riscv-assembler">open an issue</a> or <a href="contact.html">contact</a> me with any questions/inquiries.</p>
-		      <h1 class="w3-text-teal">Installation</h1>
+			      <p>Feel free to <a href = "https://github.com/kcelebi/riscv-assembler">open an issue</a> or <a href="contact.html">contact</a> me with any questions/inquiries.</p>
+			      <h1 class="w3-text-teal">Installation</h1>
 
-		      <p>The package can be installed using pip:</p>
-		      <div class='w3-code notranslate'>
-		      	$ pip install riscv-assembler
-		      </div>
+			      <p>The package can be installed using pip:</p>
+			      <div class='w3-code notranslate'>
+			      	$ pip install riscv-assembler
+			      </div>
 
-		      <p>If issues arise try:</p>
-		      <div class='w3-code notranslate'>
-		      	$ python3 -m pip install riscv-assembler
-		  	  </div>
+			      <p>If issues arise try:</p>
+			      <div class='w3-code notranslate'>
+			      	$ python3 -m pip install riscv-assembler
+			  	  </div>
 
-		      <p> It is possible that the <code class='w3-codespan'>bitstring</code> dependency might not install correctly. If this occurs, you can simply pip install it separately:</p>
+			      <p> It is possible that the <code class='w3-codespan'>bitstring</code> dependency might not install correctly. If this occurs, you can simply pip install it separately:</p>
 
-		      <div class='w3-code notranslate'>
-		      	$ pip install bitstring
-		  	  </div>
-		    
+			      <div class='w3-code notranslate'>
+			      	$ pip install bitstring
+			  	  </div>
+			    
 
-		    <a id='usage'></a>
-		    <h1 class="w3-text-teal">Usage</h1>
+			    <a id='usage'></a>
+			    <h1 class="w3-text-teal">Usage</h1>
 
-		    <p> The package works through an <code class='w3-codespan'>AssemblyConverter</code> class and a <code class='w3-codespan'>Toolkit</code> class. The  <code class='w3-codespan'>AssemblyConverter</code> class contains functions to convert whole files and projects from Assembly code to machine code. The Toolkit class contains tools to convert individual lines, apply specific instruction format types, calculate branching immediates, and many other functions.</p>
+			    <p> The package works through an <code class='w3-codespan'>AssemblyConverter</code> class and a <code class='w3-codespan'>Toolkit</code> class. The  <code class='w3-codespan'>AssemblyConverter</code> class contains functions to convert whole files and projects from Assembly code to machine code. The Toolkit class contains tools to convert individual lines, apply specific instruction format types, calculate branching immediates, and many other functions.</p>
 
-		    <p>Here's a <b>Quick Start</b> on how to convert a whole assembly (<code class='w3-codespan'>.s</code>) file to machine code using <code class ='w3-codespan'>convert()</code> :</p>
+			    <p>Here's a <b>Quick Start</b> on how to convert a whole assembly (<code class='w3-codespan'>.s</code>) file to machine code using <code class ='w3-codespan'>convert()</code> :</p>
 
-		    <div class='w3-code notranslate'>
-		    	from riscv_assembler.convert import AssemblyConverter<br>
+			    <div class='w3-code notranslate'>
+			    	from riscv_assembler.convert import AssemblyConverter<br>
 
-		    	cnv = AssemblyConverter()<br>
-		    	cnv.convert("simple.s") <br>
-		    	#outputs to binary file simple.bin<br>
-		    </div>
+			    	cnv = AssemblyConverter()<br>
+			    	cnv.convert("simple.s") <br>
+			    	#outputs to binary file simple.bin<br>
+			    </div>
 
-		    <p>All done! Read on to find more ways to use <code class='w3-codespan'>AssemblyConverter</code> and <code class='w3-codespan'>Toolkit</code>.</p>
-		   </div>
+			    <p>All done! Read on to find more ways to use <code class='w3-codespan'>AssemblyConverter</code> and <code class='w3-codespan'>Toolkit</code>.</p>
+			   </div>
 
-		    <div class="w3-third w3-container">
-		      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-		      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-		    </div>
+			    <div class="w3-third w3-container">
+			      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+			      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+			    </div>
+			</div>
+
+			<footer id="myFooter">
+			    <div class="w3-container w3-theme-l2 w3-padding-32">
+			      <h4>Created and Maintained by Kaya Çelebi</h4>
+			     <a class="github-button" href="https://github.com/kcelebi" aria-label="Follow @kcelebi on GitHub" data-size='large'>Follow @kcelebi</a>
+					<a class="github-button" href="https://github.com/kcelebi/riscv-assembler" data-icon="octicon-star" aria-label="Star kcelebi/riscv-assembler on GitHub" data-size='large'>Star</a>
+					<a class="github-button" href="https://github.com/kcelebi/riscv-assembler/subscription" data-icon="octicon-eye" data-size="large" aria-label="Watch kcelebi/riscv-assembler on GitHub">Watch</a>
+			    </div>
+		  	</footer>
+
+		<!-- END MAIN -->
 		</div>
 
-		<footer id="myFooter">
-		    <div class="w3-container w3-theme-l2 w3-padding-32">
-		      <h4>Created and Maintained by Kaya Çelebi</h4>
-		     <a class="github-button" href="https://github.com/kcelebi" aria-label="Follow @kcelebi on GitHub" data-size='large'>Follow @kcelebi</a>
-				<a class="github-button" href="https://github.com/kcelebi/riscv-assembler" data-icon="octicon-star" aria-label="Star kcelebi/riscv-assembler on GitHub" data-size='large'>Star</a>
-				<a class="github-button" href="https://github.com/kcelebi/riscv-assembler/subscription" data-icon="octicon-eye" data-size="large" aria-label="Watch kcelebi/riscv-assembler on GitHub">Watch</a>
-		    </div>
-	  	</footer>
+		<script>
+		// Get the Sidebar
+		var mySidebar = document.getElementById("mySidebar");
 
-	<!-- END MAIN -->
-	</div>
+		// Get the DIV with overlay effect
+		var overlayBg = document.getElementById("myOverlay");
 
-	<script>
-	// Get the Sidebar
-	var mySidebar = document.getElementById("mySidebar");
+		// Toggle between showing and hiding the sidebar, and add overlay effect
+		function w3_open() {
+		  if (mySidebar.style.display === 'block') {
+		    mySidebar.style.display = 'none';
+		    overlayBg.style.display = "none";
+		  } else {
+		    mySidebar.style.display = 'block';
+		    overlayBg.style.display = "block";
+		  }
+		}
 
-	// Get the DIV with overlay effect
-	var overlayBg = document.getElementById("myOverlay");
-
-	// Toggle between showing and hiding the sidebar, and add overlay effect
-	function w3_open() {
-	  if (mySidebar.style.display === 'block') {
-	    mySidebar.style.display = 'none';
-	    overlayBg.style.display = "none";
-	  } else {
-	    mySidebar.style.display = 'block';
-	    overlayBg.style.display = "block";
-	  }
-	}
-
-	// Close the sidebar with the close button
-	function w3_close() {
-	  mySidebar.style.display = "none";
-	  overlayBg.style.display = "none";
-	}
-	</script>
+		// Close the sidebar with the close button
+		function w3_close() {
+		  mySidebar.style.display = "none";
+		  overlayBg.style.display = "none";
+		}
+		</script>
 
     </body>
 </html>
