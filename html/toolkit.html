@@ -146,7 +146,39 @@
 
 			    	<h1 class='w3-text-teal'>Debugger Function</h1>
 
-			    	<p>texrt</p>
+			    	<p><code class='w3-codespan'>hex()</code> converts an inputted string of binary to 32-bits in hexadecimal. There is an option to maintain leading zeros or not. The function usage is:</p>
+
+			    	<div class='w3-code notranslate'>
+			    		tk = Toolkit()<br>
+						string  = '00000000000000000000111100110011'<br>
+						<br>
+						print(tk.hex(string,leading_zero=True)) #outputs '0x00000F33'<br>
+						print(tk.hex(string,leading_zero=False)) #outputs '0xF33'
+			    	</div>
+
+			    	<p><code class='w3-codespan'>nibbleForm()</code> takes an inputted string of unbroken binary and outputs it in nibbles separated by an inputted delimeter. The function usage is:</p>
+
+			    	<div class='w3-code notranslate'>
+				    	string  = '00000000000000000000111100110011'<br>
+				    	<br>
+						print(nibbleForm(string, delim = '\t')) <br>
+						#outputs separed by tabs '0000    0000    0000    0000    0000    1111    0011    0011'<br>
+						<br>
+						print(nibbleForm(string, delim = 'qqq') <br>#outputs '0000qqq0000qqq0000qqq0000qqq0000qqq1111qqq0011qqq0011'<br>
+					</div>
+
+					<p><code class='w3-codespan'>calcJump()</code> takes in a filename, a name of a function to jump to, and the line number of a branch statement to calculate the branch jump immediate. The line number should <b>not</b> just be the line number in your text editor; ignore empty lines, comments, and lines that indicate the start of a function (such as <code class='w3-codespan'>loop:</code>). <b>Consider the first valid line as line 0</b>. The function usage is:</p>
+
+					<div class='w3-code notranslate'>
+						tk = Tookit()<br>
+						<br>
+						print( tk.calcJump(filename = "myfile.s", x = 'loop', line_num = 42) <br>
+						#outputs an immediate according to how many instructions <br>
+						#need to be jumped to get to the function
+                    </div>
+
+                    <p>For functions that do not exist in the system that are used often, feel free to contact me to have it implemented. Most functions are readily available, however, with a growing library it is possible that a pseudo instruction or two slipped past. I intend on implementing functions that allow for the user to bypass any shortfalls like this</p>
+
 			    </div>
 
 			    <!-- ADS -->
