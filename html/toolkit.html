@@ -46,6 +46,7 @@
 		  <a class="w3-bar-item w3-button w3-hover-black" href="ac.html">AssemblyConverter</a>
 		  <a class="w3-bar-item w3-button w3-hover-black" href="#top">Toolkit</a>
 		  <a class="w3-bar-item w3-button w3-hover-black" href="#isa">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;ISA Functions</a>
+		  <a class="w3-bar-item w3-button w3-hover-black" href="#r">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;R Type</a>
 		   <a class="w3-bar-item w3-button w3-hover-black" href="#debug">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;Debugger Functions</a>
 		   <a class="w3-bar-item w3-button w3-hover-black" href="errors.html">Errors</a>
 		</nav>
@@ -80,7 +81,49 @@
 
 			    	<p>This package also offers instruction format-specific functions for individual lines of assembly. The instruction types supported are R, I, S, SB, U, and UJ. The machine code is returned as a bitstring that can be printed to console. Check out the examples below for each instruction type:</p>
 
+			    	<a id='r'></a>
+			    	<h3 class='w3-text-teal'>R Type</h3>
+
+			    	<p>This functions converts individual lines of assembly with R type instructions to machine code. The function usage is:</p>
+
+			    	<div class='w3-code notranslate'>
+			    		R_type(operation, rs1, rs2, rd)
+			    	</div>
+
+			    	Here is an example of translating <code class='w3-codespan'>add x0 s0 s1</code>.
+
+			    	<div class='w3-code notranslate'>
+			    		tk = Toolkit()<br>
+			    		instr = tk.R_type("add","x0","s0","s1") #convert the instruction <br>
+			    		<br>
+			    		print(instr) #print the bitstring<br>
+			    	</div>
+
+			    	<p>Note that the registers are being written as strings. The package maps them correctly to their respective binary values (ex. <code class='w3-codespan'>s0</code> maps to <code class='w3-codespan'>x8</code>).</p>
+
 			    	<a id='debug'></a>
+
+			    	<a id='i'></a>
+			    	<h3 class='w3-text-teal'>I Type</h3>
+
+			    	<p>This functions converts individual lines of assembly with I type instructions to machine code. The function usage is:</p>
+
+			    	<div class='w3-code notranslate'>
+			    		I_type(operation, rs1, imm, rd)
+			    	</div>
+
+			    	<p>Here is an example of translating <code class='w3-codespan'>addi x0 x0 32</code>.</p>
+
+			    	<div class='w3-code notranslate'>
+			    		tk = Toolkit() <br>
+			    		instr = tk.I_type("addi", "x0", "32", "x0") #convert the instruction <br>
+			    		<br>
+			    		print(instr) #print bitstring
+
+			    	</div>
+
+			    	<p>Note that the immediate is a string, not just a number. This was implemented this way for seamless integration with the convert() function, there is an easy workaround for using it on its own.</p>
+
 			    	<h1 class='w3-text-teal'>Debugger Function</h1>
 
 			    	<p>texrt</p>
