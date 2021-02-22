@@ -42,8 +42,8 @@
 		  <h4 class="w3-bar-item"><b>Menu</b></h4>
 		  <a class="w3-bar-item w3-button w3-hover-black" href="#install">Installation</a>
 		  <a class="w3-bar-item w3-button w3-hover-black" href="#usage">Usage</a>
-		  <a class="w3-bar-item w3-button w3-hover-black" href="#">Convert</a>
-		  <a class="w3-bar-item w3-button w3-hover-black" href="#">Toolkit</a>
+		  <a class="w3-bar-item w3-button w3-hover-black" href="ac.html">AssemblyConverter</a>
+		  <a class="w3-bar-item w3-button w3-hover-black" href="toolkit.html">Toolkit</a>
 		</nav>
 
 		<!-- Overlay effect when opening sidebar on small screens -->
@@ -62,20 +62,38 @@
 		      <h1 class="w3-text-teal">Installation</h1>
 
 		      <p>The package can be installed using pip:</p>
-		      <code class="w3-codespan">$ pip install riscv-assembler</code>
+		      <div class='w3-code notranslate'>
+		      	$ pip install riscv-assembler
+		      </div>
 
 		      <p>If issues arise try:</p>
-		      <code class="w3-codespan">$ python3 -m pip install riscv-assembler</code>
+		      <div class='w3-code notranslate'>
+		      	$ python3 -m pip install riscv-assembler
+		  	  </div>
 
 		      <p> It is possible that the <code class='w3-codespan'>bitstring</code> dependency might not install correctly. If this occurs, you can simply pip install it separately:</p>
 
-		      <code class='w3-codespan'>$ pip install bitstring</code>
+		      <div class='w3-code notranslate'>
+		      	$ pip install bitstring
+		  	  </div>
 		    
 
 		    <a id='usage'></a>
 		    <h1 class="w3-text-teal">Usage</h1>
 
 		    <p> The package works through an <code class='w3-codespan'>AssemblyConverter</code> class and a <code class='w3-codespan'>Toolkit</code> class. The  <code class='w3-codespan'>AssemblyConverter</code> class contains functions to convert whole files and projects from Assembly code to machine code. The Toolkit class contains tools to convert individual lines, apply specific instruction format types, calculate branching immediates, and many other functions.</p>
+
+		    <p>Here's a <b>Quick Start</b> on how to convert a whole assembly (<code class='w3-codespan'>.s</code>) file to machine code using <code class ='w3-codespan'>convert()</code> :</p>
+
+		    <div class='w3-code notranslate'>
+		    	from riscv_assembler.convert import AssemblyConverter<br>
+
+		    	cnv = AssemblyConverter()<br>
+		    	cnv.convert("simple.s") <br>
+		    	#outputs to binary file simple.bin<br>
+		    </div>
+
+		    <p>All done! Read on to find more ways to use <code class='w3-codespan'>AssemblyConverter</code> and <code class='w3-codespan'>Toolkit</code>.</p>
 		   </div>
 
 		    <div class="w3-third w3-container">
