@@ -47,8 +47,10 @@
 		  <a class="w3-bar-item w3-button w3-hover-black" href="#top">Toolkit</a>
 		  <a class="w3-bar-item w3-button w3-hover-black" href="#isa">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;ISA Functions</a>
 		  <a class="w3-bar-item w3-button w3-hover-black" href="#r">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;R Type</a>
+		  <a class="w3-bar-item w3-button w3-hover-black" href="#i">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;I Type</a>
+		  <a class="w3-bar-item w3-button w3-hover-black" href="#s">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;S Type</a>
 		   <a class="w3-bar-item w3-button w3-hover-black" href="#debug">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;Debugger Functions</a>
-		   <a class="w3-bar-item w3-button w3-hover-black" href="errors.html">Errors</a>
+		   <a class="w3-bar-item w3-button w3-hover-black" href="errors.html">Error Messages</a>
 		</nav>
 
 		<!-- Overlay effect when opening sidebar on small screens -->
@@ -123,6 +125,24 @@
 			    	</div>
 
 			    	<p>Note that the immediate is a string, not just a number. This was implemented this way for seamless integration with the convert() function, there is an easy workaround for using it on its own.</p>
+
+			    	<a id='s'></a>
+			    	<h3 class='w3-text-teal'>S Type</h3>
+
+			    	<p>This functions converts individual lines of assembly with S type instructions to machine code. The function usage is:</p>
+
+			    	<div class='w3-code notranslate'>
+			    		S_type(operation, rs1, rs2, imm)
+			    	</div>
+
+			    	<p>Here is an example of translating <code class='w3-codespan'>sw x0 0(sp)</code>.</p>
+
+			    	<div class='w3-code notranslate'>
+			    		tk = Toolkit() <br>
+			    		instr = tk.S_type("sw", "x0", "sp", "0") #convert the instruction<br>
+			    		<br>
+			    		print(instr) #print bitstring<br>
+			    	</div>
 
 			    	<h1 class='w3-text-teal'>Debugger Function</h1>
 
