@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+		html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+		.w3-sidebar {
+		  z-index: 3;
+		  width: 250px;
+		  top: 43px;
+		  bottom: 0;
+		  height: inherit;
+		}
+		</style>
+        <title>riscv-assembler Documentation</title>
+    </head>
+
+    <body>
+
+    	<!-- NAVBAR -->
+    	<div class="w3-top">
+		  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+		    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+		    <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
+		    <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+		    <a href="https://github.com/kcelebi/riscv-assembler" class="w3-bar-item w3-button w3-hide-small w3-hover-white">GitHub</a>
+		     <a href="https://pypi.org/project/riscv-assembler/" class="w3-bar-item w3-button w3-hide-small w3-hover-white">PyPI</a>
+		    <a href="contrib.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contribute</a>
+		    <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+		  </div>
+		</div>
+
+		<!-- Sidebar -->
+		<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+		  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+		    <i class="fa fa-remove"></i>
+		  </a>
+		  <h4 class="w3-bar-item"><b>Menu</b></h4>
+		  <a class="w3-bar-item w3-button w3-hover-black" href="index.html/#install">Installation</a>
+		  <a class="w3-bar-item w3-button w3-hover-black" href="index.hmtl/#usage">Usage</a>
+		  <a class="w3-bar-item w3-button w3-hover-black" href="ac.html">AssemblyConverter</a>
+		  <a class="w3-bar-item w3-button w3-hover-black" href="#top">Toolkit</a>
+		  <a class="w3-bar-item w3-button w3-hover-black" href="#isa">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;ISA Functions</a>
+		   <a class="w3-bar-item w3-button w3-hover-black" href="#debug">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;Debugger Functions</a>
+		</nav>
+
+		<!-- Overlay effect when opening sidebar on small screens -->
+		<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+		<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+		<div class="w3-main" style="margin-left:250px">
+
+			<div class="w3-row w3-padding-64">
+			    <div class="w3-twothird w3-container">
+			    	<a id='top'></a>
+			    	<h1 class='w3-text-teal'>Toolkit</h1>
+
+			    	<p>Let's check out how to use <code class='w3-codespan'>Toolkit</code>. <code class='w3-codespan'>Toolkit</code> contains functions that can be used to interpret specific lines, calculate jumps, and other debugging tools. First, let's import the class and functions:</p>
+
+			    	<div class='w3-code notranslate'>
+			    		from riscv_assembler.utils import *
+			    	</div>
+
+			    	<p> <b>Some of these functions rely on the class, some do not.</b> First, let's look at those that rely on the <code class='w3-codespan'>Toolkit</code> class. Let's instantiate an object:</p>
+
+			    	<div class='w3-code notranslate'>
+			    		tk = Toolkit()
+			    	</div>
+
+			    	<p>No parameters required. Let's now look at some functions.</p>
+
+			    	<a id='isa'></a>
+			    	<h1 class='w3-text-teal'>Instruction Format Function</h1>
+
+			    	<p>texrt</p>
+
+			    	<a id='debug'></a>
+			    	<h1 class='w3-text-teal'>Debugger Function</h1>
+
+			    	<p>texrt</p>
+			    </div>
+
+			    <!-- ADS -->
+			    <div class="w3-third w3-container">
+			      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+			      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+			    </div>
+			</div>
+
+		<!-- END MAIN -->  	
+		</div>
+
+	</body>
+</html>

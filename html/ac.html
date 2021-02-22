@@ -40,12 +40,13 @@
 		    <i class="fa fa-remove"></i>
 		  </a>
 		  <h4 class="w3-bar-item"><b>Menu</b></h4>
-		  <a class="w3-bar-item w3-button w3-hover-black" href="#install">Installation</a>
-		  <a class="w3-bar-item w3-button w3-hover-black" href="#usage">Usage</a>
+		  <a class="w3-bar-item w3-button w3-hover-black" href="index.html/#install">Installation</a>
+		  <a class="w3-bar-item w3-button w3-hover-black" href="index.html/#usage">Usage</a>
 		  <a class="w3-bar-item w3-button w3-hover-black" href="#top">AssemblyConverter</a>
 		  <a class="w3-bar-item w3-button w3-hover-black" href="#convert">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;Convert</a>
 		  <a class="w3-bar-item w3-button w3-hover-black" href="#helper">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;Helper Functions</a>
 		  <a class="w3-bar-item w3-button w3-hover-black" href="toolkit.html">Toolkit</a>
+		  <a class="w3-bar-item w3-button w3-hover-black" href="errors.html">Errors</a>
 		</nav>
 
 		<!-- Overlay effect when opening sidebar on small screens -->
@@ -119,6 +120,32 @@
 
 			    	<a id='helper'></a>
 			    	<h1 class = "w3-text-teal">Helper Functions</h1>
+
+			    	<p>Here are a few functions that might be useful.</p>
+
+			    	<h3 class = "w3-text-teal">Output Type</h3>
+
+			    	<p>It is possible to get and set the output type of your <code class="w3-codespan">AssemblyConverter</code> object. Observe:</p>
+
+			    	<div class='w3-code notranslate'>
+			    		cnv = AssemblyConverter("bt")<br>
+			    		output_type = cnv.getOutputType() <br>
+			    		<br>
+
+			    		print(output_type) #prints bt <br>
+			    		<br>
+			    		cnv.setOutputType("p") #now only prints to console
+			    	</div>
+
+			    	<h3 class = 'w3-text-teal'>Instructions</h3>
+
+			    	It is possible to check whether a certain instruction is supported by this package. The function <code class="w3-codespan">instructionExists(instr)</code> returns a boolean for whether <code class="w3-codespan">instr</code> exists. Observe:
+
+			    	<div class='w3-code notranslate'>
+			    		cnv = AssemblyConverter()<br>
+			    		cnv.instructionExists("add") #returns true <br>
+			    		cnv.instructionExists("hello world") #returns false 
+			    	</div>
 			    </div>
 
 			    <!-- ADS -->
